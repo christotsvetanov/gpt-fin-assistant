@@ -11,14 +11,14 @@ OpenAI Assistent API offer 3 ways (named tools) to solve this issue:
 - Knowledge Retrieval
 - Function calling
 
-Only the Function calling can allow using a payed API in real time by the assistant.
+From them only the Function calling can allow using of APIs ouside the sandbox..
 
 ## The goal
 The goal is to create an assistant with access to live market data and performing market analisys. The easiest way to achieve this is to use [Metatrader5](https://www.metatrader5.com/) [Python API](https://www.mql5.com/en/docs/python_metatrader5)
 
 # Prerequisites
-1. Use Windows OS. Metatrader works only on Windows
-2. Installed Metatrader. During the installation, a demo account to some broker will be created. You may use either this demo account or create a real one.
+1. Windows OS. Metatrader works only on Windows
+2. Installed Metatrader. During the installation, a demo account to some broker will be created. You may use either this demo account or create another one, even a real one.
 3. Python 3 installed
 4. Obtained [OpenAI API key](https://platform.openai.com/api-keys)
 
@@ -43,3 +43,10 @@ pip install -r requirements.txt
 python .\gpt-fin-assistant.py
 ```
 You may stop the assistant by pressing Ctrl+C.
+
+# Notes
+1. At beginning the script will look for `config.ini` file with assistant id
+2. If there is such an id - this assistant will be used.
+3. If not - a new one will be created and then used.
+4. In current implementation the thread is deleted after Ctrl-C. Comment the last code line to prevent this.
+5. As usual - if you are not happy with the assistant answers just ask clarifying questions.

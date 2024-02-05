@@ -38,7 +38,7 @@ def create_assistent():
                      "Answer in the language of the request. " \
                      "Before doing anything - get the current time with the tool get_today. " \
                      "Call the tool get_today only once - at the beginning. " \
-                     "Always the current day is the day, gotten from the tool get_today. " \
+                     "The current day is always the day, gotten from the tool get_today. " \
                      "For the dates, shown in the answer, use only human readible date and not the unix one. " \
                      "If you are not sure about the name of the ticket, ask the user " \
                      "Mandatory show 3 levels of support and resistance as well as the used dates. ",
@@ -60,13 +60,15 @@ def create_assistent():
                                 "6 - spread, " \
                                 "7 - real_volume" \
                                 "If the result is empty, try to call it again for one day earlier. " \
+                                "The empty result may  " \
                                 "Repeat until get a result, but no more than 5 days. ",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "symbol": {
                             "type": "string",
-                            "description": "The name of the currency pair e.g. EURUSD, USDJPY etc."
+                            "description": "The name of the market ticket e.g. EURUSD, USDJPY, GOLD, AVGO etc. " \
+                                            "In case of doubt ask the user " \
                         },
                         "timeframe": {
                             "type": "string",
